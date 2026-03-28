@@ -138,3 +138,10 @@ elif menu == "Dashboard":
 elif menu == "Report Analysis":
     import report_analysis
     report_analysis.show()
+
+footer_html = """
+    <div style="text-align: center; color: gray; font-size: 14px; padding-top: 10px;">
+        © 2026 | Developed by <strong>Himanshu Shakya</strong>
+    </div>
+"""
+st.markdown(footer_html, unsafe_allow_html=True)
