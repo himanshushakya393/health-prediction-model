@@ -1,10 +1,22 @@
 import pickle
 import numpy as np
+import os
 
-# 🔹 Load model files
-model = pickle.load(open("model/model.pkl", "rb"))
-le = pickle.load(open("model/label_encoder.pkl", "rb"))
-columns = pickle.load(open("model/columns.pkl", "rb"))
+# 🔹 Base directory (where predict.py is located)
+BASE_DIR = os.path.dirname(__file__)
+MODEL_PATH = os.path.join(BASE_DIR, "model", "model.pkl")
+LE_PATH = os.path.join(BASE_DIR, "model", "label_encoder.pkl")
+COLUMNS_PATH = os.path.join(BASE_DIR, "model", "columns.pkl")
+
+# 🔹 Load model files safely
+with open(MODEL_PATH, "rb") as f:
+    model = pickle.load(f)
+
+with open(LE_PATH, "rb") as f:
+    le = pickle.load(f)
+
+with open(COLUMNS_PATH, "rb") as f:
+    columns = pickle.load(f)
 
 
 # 🔹 Create input vector
