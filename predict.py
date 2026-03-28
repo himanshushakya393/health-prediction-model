@@ -8,7 +8,7 @@ MODEL_PATH = os.path.join(BASE_DIR, "model", "model.pkl")
 LE_PATH = os.path.join(BASE_DIR, "model", "label_encoder.pkl")
 COLUMNS_PATH = os.path.join(BASE_DIR, "model", "columns.pkl")
 
-# 🔹 Load model files safely
+# 🔹 Load model files
 with open(MODEL_PATH, "rb") as f:
     model = pickle.load(f)
 
